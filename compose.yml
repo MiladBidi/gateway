@@ -14,7 +14,7 @@ services:
     image: kong:latest
     container_name: kong
     restart: always
-      # command: kong migrations bootstrap
+    # command: kong migrations bootstrap
     ports:
       - "8000:8000"
       - "8443:8443"
