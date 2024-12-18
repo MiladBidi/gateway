@@ -1,0 +1,77 @@
+services:
+  kong-database:
+    image: postgres:9.6
+    container_name: kong-database
+    restart: always
+    environment:
+      POSTGRES_USER: kong
+      POSTGRES_PASSWORD: kong
+      POSTGRES_DB: kong
+    volumes:
+      - kong-data:/var/lib/postgresql/data
+
+        #kong-migrations:
+        #  image: kong:latest
+        #  container_name: kong-migrations
+        #  depends_on:
+        #    - kong-database
+        #  environment:
+        #    KONG_DATABASE: postgres
+        #    KONG_PG_HOST: kong-database
+        #    KONG_PG_PASSWORD: kong
+        #    KONG_PG_USER: kong
+        #    KONG_PG_DATABASE: kong
+        #  entrypoint: >
+        #    /bin/sh -c "
+        #    kong migrations bootstrap &&
+        #    kong migrations up &&
+        #    kong migrations finish
+        #    "
+
+  kong:
+    image: kong:latest
+    container_name: kong
+    restart: always
+      # command: kong migrations bootstrap
+    ports:
+      - "8000:8000"
+      - "8443:8443"
+      - "8001:8001"
+      - "8444:8444"
+    depends_on:
+      - kong-database
+    environment:
+      KONG_DATABASE: postgres
+      KONG_PG_HOST: kong-database
+      KONG_PG_PASSWORD: kong
+      KONG_PG_USER: kong
+      KONG_PG_DATABASE: kong
+      KONG_PROXY_ACCESS_LOG: /dev/stdout
+      KONG_ADMIN_ACCESS_LOG: /dev/stdout
+      KONG_PROXY_ERROR_LOG: /dev/stderr
+      KONG_ADMIN_ERROR_LOG: /dev/stderr
+      KONG_ADMIN_LISTEN: 0.0.0.0:8001, 0.0.0.0:8444 ssl
+
+  konga:
+    image: pantsel/konga:latest
+    container_name: konga
+    restart: always
+    ports:
+      - "1337:1337"
+    depends_on:
+      - kong
+      - kong-database
+    environment:
+      DB_ADAPTER: postgres
+      DB_HOST: kong-database
+      DB_USER: kong
+      DB_PORT: 5432
+      DB_PASSWORD: kong
+      DB_DATABASE: kong
+        #command: -c /app/konga.conf
+    volumes:
+      - ./konga.conf:/app/konga.conf
+
+volumes:
+  kong-data:
+
