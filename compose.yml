@@ -10,24 +10,6 @@ services:
     volumes:
       - kong-data:/var/lib/postgresql/data
 
-        #kong-migrations:
-        #  image: kong:latest
-        #  container_name: kong-migrations
-        #  depends_on:
-        #    - kong-database
-        #  environment:
-        #    KONG_DATABASE: postgres
-        #    KONG_PG_HOST: kong-database
-        #    KONG_PG_PASSWORD: kong
-        #    KONG_PG_USER: kong
-        #    KONG_PG_DATABASE: kong
-        #  entrypoint: >
-        #    /bin/sh -c "
-        #    kong migrations bootstrap &&
-        #    kong migrations up &&
-        #    kong migrations finish
-        #    "
-
   kong:
     image: kong:latest
     container_name: kong
