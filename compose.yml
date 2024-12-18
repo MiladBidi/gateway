@@ -9,12 +9,14 @@ services:
       POSTGRES_DB: kong
     volumes:
       - kong-data:/var/lib/postgresql/data
+    networks:
+      - app_net
 
   kong:
     image: kong:latest
     container_name: kong
     restart: always
-    # command: kong migrations bootstrap
+      # command: kong migrations bootstrap
     ports:
       - "8000:8000"
       - "8443:8443"
@@ -33,6 +35,8 @@ services:
       KONG_PROXY_ERROR_LOG: /dev/stderr
       KONG_ADMIN_ERROR_LOG: /dev/stderr
       KONG_ADMIN_LISTEN: 0.0.0.0:8001, 0.0.0.0:8444 ssl
+    networks:
+      - app_net
 
   konga:
     image: pantsel/konga:latest
@@ -53,7 +57,13 @@ services:
         #command: -c /app/konga.conf
     volumes:
       - ./konga.conf:/app/konga.conf
+    networks:
+      - app_net
 
 volumes:
   kong-data:
 
+networks:
+  app_net:
+    external: true
+    name: app_net

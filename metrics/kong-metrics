@@ -1,0 +1,72 @@
+# HELP kong_datastore_reachable Datastore reachable from Kong, 0 is unreachable
+# TYPE kong_datastore_reachable gauge
+kong_datastore_reachable 1
+
+# HELP kong_memory_lua_shared_dict_bytes Allocated slabs in bytes in a shared_dict
+# TYPE kong_memory_lua_shared_dict_bytes gauge
+kong_memory_lua_shared_dict_bytes{node_id="32168d7a-f265-4cc5-9bb0-170203ea7e4f",shared_dict="kong",kong_subsystem="http"} 40960
+kong_memory_lua_shared_dict_bytes{node_id="32168d7a-f265-4cc5-9bb0-170203ea7e4f",shared_dict="kong_cluster_events",kong_subsystem="http"} 40960
+kong_memory_lua_shared_dict_bytes{node_id="32168d7a-f265-4cc5-9bb0-170203ea7e4f",shared_dict="kong_core_db_cache",kong_subsystem="http"} 798720
+kong_memory_lua_shared_dict_bytes{node_id="32168d7a-f265-4cc5-9bb0-170203ea7e4f",shared_dict="kong_core_db_cache_miss",kong_subsystem="http"} 86016
+kong_memory_lua_shared_dict_bytes{node_id="32168d7a-f265-4cc5-9bb0-170203ea7e4f",shared_dict="kong_db_cache",kong_subsystem="http"} 794624
+kong_memory_lua_shared_dict_bytes{node_id="32168d7a-f265-4cc5-9bb0-170203ea7e4f",shared_dict="kong_db_cache_miss",kong_subsystem="http"} 86016
+kong_memory_lua_shared_dict_bytes{node_id="32168d7a-f265-4cc5-9bb0-170203ea7e4f",shared_dict="kong_healthchecks",kong_subsystem="http"} 40960
+kong_memory_lua_shared_dict_bytes{node_id="32168d7a-f265-4cc5-9bb0-170203ea7e4f",shared_dict="kong_locks",kong_subsystem="http"} 61440
+kong_memory_lua_shared_dict_bytes{node_id="32168d7a-f265-4cc5-9bb0-170203ea7e4f",shared_dict="kong_rate_limiting_counters",kong_subsystem="http"} 86016
+kong_memory_lua_shared_dict_bytes{node_id="32168d7a-f265-4cc5-9bb0-170203ea7e4f",shared_dict="kong_secrets",kong_subsystem="http"} 40960
+kong_memory_lua_shared_dict_bytes{node_id="32168d7a-f265-4cc5-9bb0-170203ea7e4f",shared_dict="prometheus_metrics",kong_subsystem="http"} 40960
+
+# HELP kong_memory_lua_shared_dict_total_bytes Total capacity in bytes of a shared_dict
+# TYPE kong_memory_lua_shared_dict_total_bytes gauge
+kong_memory_lua_shared_dict_total_bytes{node_id="32168d7a-f265-4cc5-9bb0-170203ea7e4f",shared_dict="kong",kong_subsystem="http"} 5242880
+kong_memory_lua_shared_dict_total_bytes{node_id="32168d7a-f265-4cc5-9bb0-170203ea7e4f",shared_dict="kong_cluster_events",kong_subsystem="http"} 5242880
+kong_memory_lua_shared_dict_total_bytes{node_id="32168d7a-f265-4cc5-9bb0-170203ea7e4f",shared_dict="kong_core_db_cache",kong_subsystem="http"} 134217728
+kong_memory_lua_shared_dict_total_bytes{node_id="32168d7a-f265-4cc5-9bb0-170203ea7e4f",shared_dict="kong_core_db_cache_miss",kong_subsystem="http"} 12582912
+kong_memory_lua_shared_dict_total_bytes{node_id="32168d7a-f265-4cc5-9bb0-170203ea7e4f",shared_dict="kong_db_cache",kong_subsystem="http"} 134217728
+kong_memory_lua_shared_dict_total_bytes{node_id="32168d7a-f265-4cc5-9bb0-170203ea7e4f",shared_dict="kong_db_cache_miss",kong_subsystem="http"} 12582912
+kong_memory_lua_shared_dict_total_bytes{node_id="32168d7a-f265-4cc5-9bb0-170203ea7e4f",shared_dict="kong_healthchecks",kong_subsystem="http"} 5242880
+kong_memory_lua_shared_dict_total_bytes{node_id="32168d7a-f265-4cc5-9bb0-170203ea7e4f",shared_dict="kong_locks",kong_subsystem="http"} 8388608
+kong_memory_lua_shared_dict_total_bytes{node_id="32168d7a-f265-4cc5-9bb0-170203ea7e4f",shared_dict="kong_rate_limiting_counters",kong_subsystem="http"} 12582912
+kong_memory_lua_shared_dict_total_bytes{node_id="32168d7a-f265-4cc5-9bb0-170203ea7e4f",shared_dict="kong_secrets",kong_subsystem="http"} 5242880
+kong_memory_lua_shared_dict_total_bytes{node_id="32168d7a-f265-4cc5-9bb0-170203ea7e4f",shared_dict="prometheus_metrics",kong_subsystem="http"} 5242880
+
+# HELP kong_memory_workers_lua_vms_bytes Allocated bytes in worker Lua VM
+# TYPE kong_memory_workers_lua_vms_bytes gauge
+kong_memory_workers_lua_vms_bytes{node_id="32168d7a-f265-4cc5-9bb0-170203ea7e4f",pid="1404",kong_subsystem="http"} 49699288
+kong_memory_workers_lua_vms_bytes{node_id="32168d7a-f265-4cc5-9bb0-170203ea7e4f",pid="1405",kong_subsystem="http"} 48923876
+kong_memory_workers_lua_vms_bytes{node_id="32168d7a-f265-4cc5-9bb0-170203ea7e4f",pid="1406",kong_subsystem="http"} 48923876
+kong_memory_workers_lua_vms_bytes{node_id="32168d7a-f265-4cc5-9bb0-170203ea7e4f",pid="1407",kong_subsystem="http"} 48905444
+kong_memory_workers_lua_vms_bytes{node_id="32168d7a-f265-4cc5-9bb0-170203ea7e4f",pid="1408",kong_subsystem="http"} 48923876
+kong_memory_workers_lua_vms_bytes{node_id="32168d7a-f265-4cc5-9bb0-170203ea7e4f",pid="1409",kong_subsystem="http"} 48923876
+kong_memory_workers_lua_vms_bytes{node_id="32168d7a-f265-4cc5-9bb0-170203ea7e4f",pid="1410",kong_subsystem="http"} 48923300
+kong_memory_workers_lua_vms_bytes{node_id="32168d7a-f265-4cc5-9bb0-170203ea7e4f",pid="1411",kong_subsystem="http"} 48923876
+kong_memory_workers_lua_vms_bytes{node_id="32168d7a-f265-4cc5-9bb0-170203ea7e4f",pid="1412",kong_subsystem="http"} 48922280
+kong_memory_workers_lua_vms_bytes{node_id="32168d7a-f265-4cc5-9bb0-170203ea7e4f",pid="1413",kong_subsystem="http"} 48905444
+
+# HELP kong_nginx_connections_total Number of connections by subsystem
+# TYPE kong_nginx_connections_total gauge
+kong_nginx_connections_total{node_id="32168d7a-f265-4cc5-9bb0-170203ea7e4f",subsystem="http",state="accepted"} 23
+kong_nginx_connections_total{node_id="32168d7a-f265-4cc5-9bb0-170203ea7e4f",subsystem="http",state="active"} 12
+kong_nginx_connections_total{node_id="32168d7a-f265-4cc5-9bb0-170203ea7e4f",subsystem="http",state="handled"} 23
+kong_nginx_connections_total{node_id="32168d7a-f265-4cc5-9bb0-170203ea7e4f",subsystem="http",state="reading"} 0
+kong_nginx_connections_total{node_id="32168d7a-f265-4cc5-9bb0-170203ea7e4f",subsystem="http",state="total"} 210
+kong_nginx_connections_total{node_id="32168d7a-f265-4cc5-9bb0-170203ea7e4f",subsystem="http",state="waiting"} 1
+kong_nginx_connections_total{node_id="32168d7a-f265-4cc5-9bb0-170203ea7e4f",subsystem="http",state="writing"} 11
+
+# HELP kong_nginx_metric_errors_total Number of nginx-lua-prometheus errors
+# TYPE kong_nginx_metric_errors_total counter
+kong_nginx_metric_errors_total 0
+
+# HELP kong_nginx_requests_total Number of requests total
+# TYPE kong_nginx_requests_total gauge
+kong_nginx_requests_total{node_id="32168d7a-f265-4cc5-9bb0-170203ea7e4f",subsystem="http"} 210
+
+# HELP kong_nginx_timers Number of nginx timers
+# TYPE kong_nginx_timers gauge
+kong_nginx_timers{state="pending"} 1
+kong_nginx_timers{state="running"} 257
+
+# HELP kong_node_info Kong Node metadata information
+# TYPE kong_node_info gauge
+kong_node_info{node_id="32168d7a-f265-4cc5-9bb0-170203ea7e4f",version="3.8.0"} 1
+
